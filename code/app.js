@@ -22,7 +22,8 @@ const operationWithNums = (operationIndex) => {
             return firstNum * secNum
 
         case 4:
-            return firstNum / secNum
+            return  (firstNum / secNum).toFixed(5)
+
     }
 }
 
@@ -30,17 +31,8 @@ const operationWithNums = (operationIndex) => {
 for (let button of buttons) {
 
     button.addEventListener('click', () => {
-        if (button.textContent === '0' ||
-            button.textContent === '1' ||
-            button.textContent === '2' ||
-            button.textContent === '3' ||
-            button.textContent === '4' ||
-            button.textContent === '5' ||
-            button.textContent === '6' ||
-            button.textContent === '7' ||
-            button.textContent === '8' ||
-            button.textContent === '9') {
-            if (ansField.textContent === '0' || ansField.textContent === '')
+        if ('0123456789'.includes(button.textContent)) {
+            if (ansField.textContent === '0')
                 ansField.textContent = button.textContent
             else {
                 ansField.textContent += button.textContent
